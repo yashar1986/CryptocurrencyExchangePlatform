@@ -9,7 +9,7 @@ import { LogoIcon } from '../../assets/images/LogoIcon';
 // import { MarketsTable } from '../../containers';
 import { toggleColorTheme } from '../../helpers';
 import { RootState, selectCurrentColorTheme, selectUserLoggedIn } from '../../modules';
-// import './style.scss';
+ import './style.scss';
 const FeaturesExchangeIcon = require('../../assets/images/landing/features/Exchange.svg');
 const FeaturesTypesIcon = require('../../assets/images/landing/features/Types.svg');
 const FeaturesCustomizeIcon = require('../../assets/images/landing/features/Customize.svg');

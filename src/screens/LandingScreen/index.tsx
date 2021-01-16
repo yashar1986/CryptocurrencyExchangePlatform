@@ -3,13 +3,13 @@ import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { Link, RouteProps, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import { Dropdown, Menu } from 'semantic-ui-react';
 import { IntlProps } from '../../';
 import { LogoIcon } from '../../assets/images/LogoIcon';
 // import { MarketsTable } from '../../containers';
 import { toggleColorTheme } from '../../helpers';
 import { RootState, selectCurrentColorTheme, selectUserLoggedIn } from '../../modules';
-import './style.scss';
-import { Menu, Dropdown } from 'semantic-ui-react';
+// import './style.scss';
 const FeaturesExchangeIcon = require('../../assets/images/landing/features/Exchange.svg');
 const FeaturesTypesIcon = require('../../assets/images/landing/features/Types.svg');
 const FeaturesCustomizeIcon = require('../../assets/images/landing/features/Customize.svg');
@@ -86,9 +86,9 @@ class Landing extends React.Component<Props> {
                             <Link to="/Trade" className="pg-Link"></Link>
                             <Dropdown item text={this.translate('page.body.landing.header.Trade')} >
                                 <Dropdown.Menu >
-                                
+
                                     <Dropdown.Item >
-    
+
                                         <span className="text"></span>
 
                                         <Dropdown.Menu>
@@ -102,11 +102,11 @@ class Landing extends React.Component<Props> {
                                     <Dropdown.Divider />
                                     <Dropdown.Header></Dropdown.Header>
                                     <Dropdown.Item></Dropdown.Item>
-                                    
+
                                 </Dropdown.Menu>
                             </Dropdown>
-                            
-                            
+
+
                             <Link to="/Finance" className="pg-Link">
                                 <Menu.Item>{this.translate('page.body.landing.header.Finance')}</Menu.Item>
                             </Link>

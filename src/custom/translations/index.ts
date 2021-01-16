@@ -11,4 +11,4 @@ export const customLanguageMap = {
 };
 export type LangType = typeof en;
 
-
+

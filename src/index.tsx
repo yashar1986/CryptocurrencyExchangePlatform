@@ -6,13 +6,13 @@ import * as ReactDOM from 'react-dom';
 import {  WrappedComponentProps } from 'react-intl';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { Provider } from 'react-redux';
+import 'semantic-ui-css/semantic.min.css';
 import { sentryEnabled } from './api/config';
 import { App } from './App';
 import './index.css';
 import { rootSaga } from './modules';
 import { rangerSagas } from './modules/public/ranger';
 import { rangerMiddleware, sagaMiddleware, store } from './store';
-import 'semantic-ui-css/semantic.min.css'
 
 if (!Intl.PluralRules) {
     require('@formatjs/intl-pluralrules/polyfill');

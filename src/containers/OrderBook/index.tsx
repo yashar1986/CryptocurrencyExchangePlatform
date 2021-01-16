@@ -218,7 +218,7 @@ class OrderBookContainer extends React.Component<Props, State> {
                     }
 
                     return [
-                        <span style={{color:"#dc3545"}} key={i}>
+                        <span style={{color:'#dc3545'}} key={i}>
                             <Decimal fixed={priceFixed} thousSep="," prevValue={array[i + 1] ? array[i + 1][0] : 0}>{price}</Decimal>
                         </span>,
                         <Decimal key={i} fixed={amountFixed} thousSep=",">{volume}</Decimal>,
@@ -228,7 +228,7 @@ class OrderBookContainer extends React.Component<Props, State> {
                     if (isLarge) {
                         if (isMobileDevice) {
                             return [
-                                <span style={{color:"red"}}>
+                                <span style={{color:'red'}}>
                                 <Decimal  key={i} fixed={amountFixed}>{total[i]}</Decimal>,
                                 </span>,
                                 <span key={i}>
@@ -255,7 +255,7 @@ class OrderBookContainer extends React.Component<Props, State> {
                         }
 
                         return [
-                            <span style={{color:"#25bd49"}} key={i}>
+                            <span style={{color:'#25bd49'}} key={i}>
                                 <Decimal fixed={priceFixed} thousSep="," prevValue={array[i - 1] ? array[i - 1][0] : 0}>{price}</Decimal>
                             </span>,
                             <Decimal key={i} fixed={amountFixed} thousSep=",">{volume}</Decimal>,

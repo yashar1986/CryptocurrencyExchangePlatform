@@ -28,6 +28,7 @@
     "js-yaml": "^3.12.0",
     "moment": "^2.23.0",
     "moment-timezone": "^0.5.23",
+    "node-sass": "^4.14.1",
     "postcss": "^7.0.23",
     "postcss-cli": "^6.1.3",
     "postcss-loader": "^3.0.0",
@@ -140,12 +141,7 @@
     "webpack": "4.42.0",
     "webpack-obfuscator": "^2.3.0"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "./scripts/validate_commit.js $HUSKY_GIT_PARAMS && (cd \"./$GIT_PREFIX\"; yarn lint)",
-      "pre-push": "yarn lint && CI=true yarn test --no-watch"
-    }
-  },
+
   "browserslist": [
     ">0.2%",
     "not ie <= 11",

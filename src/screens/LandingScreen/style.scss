@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: 'IRANSans';
+    src: url(../../assets/fonts/iransans.eot?#) format("eot"),
+    url(../../assets/fonts/iransans.woff) format("woff"),
+    url(../../assets/fonts/iransans.ttf) format("truetype");
+}
+.pg-landing-screen__header__wrap{
+    background-color: blue;
+    direction: rtl;
+}
+.pg-landing-screen__market-info{
+    background-color: blue;
+}
+.pg-Link{
+    font-size: 14px;
+    color: white;
+  
+}
+.pg-landing-screen__header{
+    background: blue !important;
+}
+
+.ui.secondary.pointing.menu{
+    border-bottom: none;
+
+}
+
+.ui.secondary.menu .item{
+    color: white;
+    font-size:14px;
+    font-family: IRANSans;
+    font-weight: bold;
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child{
+    font-family: IRANSans;
+}
+.pg-landing-screen h1{
+    font-family: IRANSans;
+}
+.ui.dropdown>.text{
+    color: white;
+}
+.ui.dropdown>.dropdown.icon:before{
+    color: white;
+}

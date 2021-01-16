@@ -98,6 +98,11 @@ export const en = {
     'page.body.landing.marketInfo.title.text2': 'Buy, sell and trade digital currency.',
     'page.body.landing.marketInfo.title.button': 'start trading',
 
+    'page.body.landing.header.BuySell':"BuySell",
+    'page.body.landing.header.Market':"Market",
+    'page.body.landing.header.Trade':"Trade",
+    'page.body.landing.header.Finance':'Finance',
+
     'page.body.landing.platformInfo.item.first.value': '30M+',
     'page.body.landing.platformInfo.item.first.title': 'Customers served',
     'page.body.landing.platformInfo.item.second.value': '$3M+',

@@ -96,7 +96,7 @@ export const ru: LangType = {
     'page.body.landing.header.button3': 'ثبت نام',
 
     'page.body.landing.marketInfo.title.text1': 'به بانکدکس خوش آمدید',
-    'page.body.landing.marketInfo.title.text2': 'خرید، فروش و معامله ارزهای دیجیتال.',
+    'page.body.landing.marketInfo.title.text2': 'خرید، فروش و معامله ارزهای دیجیتال',
     'page.body.landing.marketInfo.title.button': 'شروع معاملات',
 
     'page.body.landing.header.BuySell':"خرید فروش",

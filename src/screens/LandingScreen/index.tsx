@@ -131,10 +131,10 @@ class Landing extends React.Component<Props> {
             <div className="pg-landing-screen__market-info">
                 <div className="pg-landing-screen__market-info__wrap">
                     <div className="pg-landing-screen__market-info__wrap__title">
-                        <h1 style={{ fontWeight: 'bold' }}>
+                        <h1 style={{ fontWeight: 'bold',fontSize:"30px" }}>
                             {this.translate('page.body.landing.marketInfo.title.text1')}
                         </h1>
-                        <h1 style={{ fontWeight: 'bold' }}>
+                        <h1 style={{ fontWeight: 'bold', fontSize:"30px"}}>
                             {this.translate('page.body.landing.marketInfo.title.text2')}
                         </h1>
                         <Link to="/trading" className="landing-button">

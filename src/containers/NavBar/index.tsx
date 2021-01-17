@@ -40,8 +40,10 @@ class NavBarComponent extends React.Component<Props> {
                             className="pg-navbar__header-settings__switcher__items"
                             onClick={e => this.handleChangeCurrentStyleMode(colorTheme === 'light' ? 'dark' : 'light')}
                         >
+                           
                             {this.getLightDarkMode()}
                         </div>
+                        
                     </div>
                 </div>
             </div>

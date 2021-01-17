@@ -7,12 +7,13 @@ import { IntlProps } from '../../';
 import { incrementalOrderBook } from '../../api';
 import { Decimal } from '../../components/Decimal';
 import { GridChildInterface, GridItem } from '../../components/GridItem';
-import {
+ import {  Menu } from 'semantic-ui-react'
+ import {
     MarketDepthsComponent,
     MarketsComponent,
     OpenOrdersComponent,
     OrderBook,
-    OrderComponent,
+     OrderComponent,
     RecentTrades,
     ToolBar,
     TradingChart,
@@ -78,41 +79,67 @@ interface DispatchProps {
 interface StateProps {
     orderComponentResized: number;
     orderBookComponentResized: number;
+    activeItem:string;
 }
 
 const ReactGridLayout = WidthProvider(Responsive);
 type Props = DispatchProps & ReduxProps & RouteComponentProps & IntlProps;
 
 const TradingWrapper = props => {
-    const { orderComponentResized, orderBookComponentResized, layouts, handleResize, handeDrag } = props;
+    const { orderComponentResized, orderBookComponentResized, layouts, handleResize, handeDrag,active,Click } = props;
     const children = React.useMemo(() => {
         const data = [
+            
             // {
-            //     i: 1,
-            //     render: () => <OrderComponent size={orderComponentResized} />,
-            // },
+            //     i:4,
+            //     render: () => <MarketDepthsComponent />,
+            // }, */
             {
-                i:4,
-                render: () => <MarketDepthsComponent />,
-            },
-            {
+
                 i: 2,
-                render: () => <TradingChart />,
+                render: () =><>
+
+          <Menu attached='top' tabular>
+          <Menu.Item
+            name='DASH/BTC'
+            active={active === 'bio'}
+            onClick={()=>Click('bio')}
+          />
+          <Menu.Item
+            name='Market Depth'
+             active={active === 'photos'}
+            onClick={()=>Click('photos')}
+          />
+          <Menu.Menu position='right'>
+            <Menu.Item>
+            
+            </Menu.Item>
+          </Menu.Menu>
+        </Menu>
+    
+         {active === 'bio'? <TradingChart/>: <MarketDepthsComponent />}  
+                </>,
+                
             },
             {
+
                 i: 3,
                 render: () => <OrderBook size={orderBookComponentResized} />,
             },
 
-            {
-                i: 5,
-                render: () => <OrderComponent size={orderComponentResized} />,
-            },
+             {
+                 i: 5,
+                 render: () => <OrderComponent size={orderComponentResized} />,
+             },
 
-            {
-                i: 1,
-                render: () => <OpenOrdersComponent/>,
-            },
+        //      {
+        //         i: 1,
+        //         render: () => <OpenOrdersComponent/>,
+        //    },
+        {
+            i: 4,
+            render: () => <OpenOrdersComponent/>,
+       },
             {
                 i: 6,
                 render: () => <RecentTrades/>,
@@ -128,7 +155,7 @@ const TradingWrapper = props => {
                 <GridItem>{child.render ? child.render() : `Child Body ${child.i}`}</GridItem>
             </div>
         ));
-    }, [orderComponentResized, orderBookComponentResized]);
+    }, [orderComponentResized, orderBookComponentResized,active]);
 
     return (
         <ReactGridLayout
@@ -148,10 +175,15 @@ const TradingWrapper = props => {
 };
 
 class Trading extends React.Component<Props, StateProps> {
-    public readonly state = {
+    constructor(props:Props) {
+        super(props);
+        this.state = { activeItem: 'bio', 
         orderComponentResized: 5,
         orderBookComponentResized: 5,
-    };
+    }
+       
+      }
+ 
 
     public componentDidMount() {
         setDocumentTitle('Trading');
@@ -209,9 +241,9 @@ class Trading extends React.Component<Props, StateProps> {
             this.setTradingTitle(nextProps.currentMarket, nextProps.tickers);
         }
     }
-
+    handleItemClick = (  name:string ) => this.setState({ activeItem: name })
     public render() {
-        const { orderComponentResized, orderBookComponentResized } = this.state;
+        const { orderComponentResized, orderBookComponentResized,activeItem } = this.state;
         const { rgl } = this.props;
 
         return (
@@ -222,6 +254,8 @@ class Trading extends React.Component<Props, StateProps> {
                         <div className="cr-grid__grid-wrapper">
                             <TradingWrapper
                                 layouts={rgl.layouts}
+                                active={activeItem }
+                                Click={this.handleItemClick}  
                                 orderComponentResized={orderComponentResized}
                                 orderBookComponentResized={orderBookComponentResized}
                                 handleResize={this.handleResize}

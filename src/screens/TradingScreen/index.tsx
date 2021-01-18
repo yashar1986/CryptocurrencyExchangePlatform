@@ -7,6 +7,7 @@ import { IntlProps } from '../../';
 import { incrementalOrderBook } from '../../api';
 import { Decimal } from '../../components/Decimal';
 import { GridChildInterface, GridItem } from '../../components/GridItem';
+import "./stayle.scss"
  import {  Menu } from 'semantic-ui-react'
  import {
     MarketDepthsComponent,

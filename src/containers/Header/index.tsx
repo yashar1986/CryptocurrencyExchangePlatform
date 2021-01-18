@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { IntlProps } from '../../';
 import { showLanding } from '../../api';
-// import { LogoIcon } from '../../assets/images/LogoIcon';
+import { LogoIcon } from '../../assets/images/LogoIcon';
 import {
     Market,
     RootState,
@@ -20,6 +20,8 @@ import {
     toggleMarketSelector,
     toggleSidebar,
 } from '../../modules';
+import { Link } from 'react-router-dom';
+import { Button} from 'semantic-ui-react';
 import { HeaderToolbar } from '../HeaderToolbar';
 import { NavBar } from '../NavBar';
 
@@ -75,7 +77,7 @@ class Head extends React.Component<Props> {
                     </div>
                     <div onClick={e => this.redirectToLanding()} className="pg-header__logo">
                         <div className="pg-logo">
-                            {/* <LogoIcon className="pg-logo__img" /> */}
+                            <LogoIcon className="pg-logo__img" />
                         </div>
                     </div>
                     {this.renderMarketToggler()}
@@ -85,6 +87,20 @@ class Head extends React.Component<Props> {
                     {this.renderMobileWalletNav()}
                     <div className="pg-header__navbar">
                         {this.renderMarketToolbar()}
+                        <div className="pg-landing-screen__header__wrap__right">
+                        <Link to="/signin" className="landing-button landing-button--simple">
+                           
+                            <Button primary>
+                            {this.translate('page.body.landing.header.button2')}
+                            </Button>
+
+                        </Link>
+                        <Link to="/signup" className="landing-button">
+                            <Button primary>
+                            {this.translate('page.body.landing.header.button3')}
+                            </Button>
+                        </Link>
+                    </div>
                         <NavBar onLinkChange={this.closeMenu}/>
                     </div>
                 </div>
